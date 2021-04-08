@@ -1,16 +1,12 @@
 import styled from "styled-components";
-import img1 from "../img/project1-1.png";
-import img2 from "../img/project1-2.png";
-import img3 from "../img/project1-3.png";
-import img4 from "../img/project1-4.png";
-import img5 from "../img/project1-5.png";
+
 
 const Project = styled.div`
   width: 100%;
   height: 50vw;
   background-color: green;
   position: relative;
-  margin:0 auto;
+  margin: 0 auto;
 `;
 const Imageview = styled.div`
   position: absolute;
@@ -22,7 +18,7 @@ const Imageview = styled.div`
   height: 65%;
   display: flex;
   justify-content: center;
-  overflow:hidden;
+  overflow: hidden;
 `;
 const Info = styled.div`
   position: absolute;
@@ -35,7 +31,6 @@ const Info = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
-
 `;
 
 const Imagelist = styled.div`
@@ -52,34 +47,35 @@ const Imagelist = styled.div`
 `;
 
 const Img = styled.img`
-  width:20%;
-  
-  overflow:hidden;
+  width: 20%;
+
+  overflow: hidden;
 `;
 
-const MainProject = () => {
-  const select = img2;
+const MainProject = ({ focusimg, imgs, onChange }) => {
   return (
     <Project>
       <Imageview>
-        <img src={select} />
+        <img src={focusimg}/>
       </Imageview>
       <Info>
-
-          메인 프로젝트 메인 프로젝트를 설명하는 칸 ex) 보드 게임 프로젝트 비트        <br />
-        교육센터 기간중 팀프로젝트로 제작 제작 기간 0000.00.00 ~ 0000.00.00 담당        <br />
-        제작 : 보드 게임의 대기실(게임 방목록 및 제작, 유저 목록 및 채팅) 제작        <br />
+        메인 프로젝트 메인 프로젝트를 설명하는 칸 ex) 보드 게임 프로젝트 비트{" "}
+        <br />
+        교육센터 기간중 팀프로젝트로 제작 제작 기간 0000.00.00 ~ 0000.00.00 담당{" "}
+        <br />
+        제작 : 보드 게임의 대기실(게임 방목록 및 제작, 유저 목록 및 채팅) 제작{" "}
+        <br />
         게임 랭킹 및 목록 <br />
       </Info>
       <Imagelist>
-        <Img src={img1} />
-        <Img src={img2} />
-        <Img src={img3} />
-        <Img src={img4} />
-        <Img src={img5} />
+      {imgs.map((image) => (
+          <Img src={image.img} onClick={() => onChange(image.img)}
+          />
+        ))}
       </Imagelist>
       <br />
     </Project>
+
     /*
     <div>
       <b>메인 프로젝트 메인 프로젝트를 설명하는 칸 ex) 보드 게임 프로젝트 비트</b> <br/>

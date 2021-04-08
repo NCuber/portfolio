@@ -1,8 +1,6 @@
-import logo from "./logo.svg";
-import "./App.css";
 import Tech from "./components/Tech";
 import Introduction from "./components/Introduction";
-import MainProject from "./components/MainProject";
+import ProjectContainer from "./containers/ProjectContainer"
 import Contact from "./components/Contact";
 import Title from "./components/Title";
 
@@ -11,9 +9,13 @@ function App() {
     
     <div>
       <Title />
+      <hr/>
       <Introduction />
+      <hr/>
       <Tech />
-      <MainProject />
+      <hr/>
+      <ProjectContainer />
+      <hr/>
       <Contact />
     </div>
   );
