@@ -8,12 +8,12 @@ function App() {
   return (
     
     <div>
-      <Title />
+      
       <hr/>
       <Introduction />
       <hr/>
       <Tech />
-      <hr/>
+      <Title /><hr/>
       <ProjectContainer />
       <hr/>
       <Contact />
