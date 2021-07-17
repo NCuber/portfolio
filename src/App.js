@@ -8,14 +8,14 @@ function App() {
   return (
     
     <div>
-      <Title />
+      
       <hr/>
       <Introduction />
       <hr/>
       <Tech />
       <hr/>
       <ProjectContainer />
-      <hr/>
+      <hr/><Title />
       <Contact />
     </div>
   );
