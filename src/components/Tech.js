@@ -1,7 +1,10 @@
 import styled from "styled-components";
-import {useSpring, animated} from "react-spring";
+import { useSpring, animated } from "react-spring";
+import { getByDisplayValue } from "@testing-library/react";
 
-{/* --------- 스타일 선언부 --------- */}
+{
+  /* --------- 스타일 선언부 --------- */
+}
 
 const Main = styled.div`
   width: 100%;
@@ -24,110 +27,176 @@ const Title = styled.div`
 
 const List = styled.div`
   display: grid;
-  width: 90%;
-  height: 90%;
+  width: 1fr;
+  height: 1fr;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.2fr 1fr 1fr;
   grid-gap: 10px 10px;
   margin: 0 auto;
-
 `;
 
 const Circle = styled(animated.div)`
-
   position: relative;
   display: flex;
-  width: 200px;
-  height:200px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
 `;
 
 const Incircle = styled.div`
   position: absolute;
-  top: 20px;
-  left: 20px;
-  text-align:center;
-  line-height: 160px;
-  width:160px;
-  height:160px;
-  overflow:hidden;
+  top: 15px;
+  left: 15px;
+  text-align: center;
+  line-height: 150px;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
   border-radius: 50%;
   background: skyblue;
 `;
 
-const One = styled.div`
+const Item = styled.div`
+  width:96%;
+  height:96%;
+  grid-template-columns: repeat(3, 0.9fr);
+  grid-template-rows: 0.2fr repeat(auto, 1fr);
+  grid-gap: 10px 10px;
+  padding: 10px;
+  
   border-style: solid;
-  display: flex;
+  display: grid;
 `;
 
-
-
-
 const Tech = () => {
-  {/* --------- 변수 선언부 --------- */}
+  {
+    /* --------- 변수 선언부 --------- */
+  }
 
-  const {dono} = useSpring({
+  const { dono } = useSpring({
     dono: 100,
-    from: { dono:0 },
-    config: 	{ mass: 1, tension: 150, friction: 70 },
+    from: { dono: 0 },
+    config: { mass: 1, tension: 150, friction: 70 },
   });
 
-  {/* --------- 리턴 정의부 --------- */}
+  {
+    /* --------- 리턴 정의부 --------- */
+  }
   return (
     <Main>
       <List>
         <Title>My Skill</Title>
-        <One style={{gridRow : '2/4'}}>
-          <Circle style={{background: dono.to(dono => `conic-gradient(blue ${dono}% , white ${dono}%)`)}}>
-            <Incircle>
-            </Incircle>
-          </Circle>
 
-          <Circle style={{background: dono.to(dono => `conic-gradient(blue ${dono}% , white ${dono}%)`)}}>
-            <Incircle>
-            </Incircle>
-          </Circle>
+        <div style={{ gridRow: "2/4" }}>
+          <Item>
+            <Title style={{ gridColumn: "1/4" ,fontSize: '30pt', textAlign:'center'}}>코딩</Title>
+            <Circle
+              style={{
+                background: dono.to(
+                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
+                ),
+              }}
+            >
+              <Incircle></Incircle>
+            </Circle>
 
-          <Circle style={{background: dono.to(dono => `conic-gradient(blue ${dono}% , white ${dono}%)`)}}>
-            <Incircle>
-            </Incircle>
-          </Circle>
+            <Circle
+              style={{
+                background: dono.to(
+                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
+                ),
+              }}
+            >
+              <Incircle></Incircle>
+            </Circle>
 
-          <Circle style={{background: dono.to(dono => `conic-gradient(blue ${dono}% , white ${dono}%)`)}}>
-            <Incircle>
-            </Incircle>
-          </Circle>
+            <Circle
+              style={{
+                background: dono.to(
+                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
+                ),
+              }}
+            >
+              <Incircle></Incircle>
+            </Circle>
 
-          <Circle style={{background: dono.to(dono => `conic-gradient(blue ${dono}% , white ${dono}%)`)}}>
-            <Incircle>
-            </Incircle>
-          </Circle>
+            <Circle
+              style={{
+                background: dono.to(
+                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
+                ),
+              }}
+            >
+              <Incircle></Incircle>
+            </Circle>
 
-          <Circle style={{background: dono.to(dono => `conic-gradient(blue ${dono}% , white ${dono}%)`)}}>
-            <Incircle>
-            </Incircle>
-          </Circle>
-        </One>
-        <One>
-        <Circle style={{background: dono.to(dono => `conic-gradient(blue ${dono}% , white ${dono}%)`)}}>
-            <Incircle>
-            </Incircle>
-          </Circle>
-          <Circle style={{background: dono.to(dono => `conic-gradient(blue ${dono}% , white ${dono}%)`)}}>
-            <Incircle>
-            </Incircle>
-          </Circle>
-        </One>
-        <One>
-        <Circle style={{background: dono.to(dono => `conic-gradient(blue ${dono}% , white ${dono}%)`)}}>
-            <Incircle>
-            </Incircle>
-          </Circle>
-          <Circle style={{background: dono.to(dono => `conic-gradient(blue ${dono}% , white ${dono}%)`)}}>
-            <Incircle>
-            </Incircle>
-          </Circle>
-        </One>
+            <Circle
+              style={{
+                background: dono.to(
+                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
+                ),
+              }}
+            >
+              <Incircle></Incircle>
+            </Circle>
+
+            <Circle
+              style={{
+                background: dono.to(
+                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
+                ),
+              }}
+            >
+              <Incircle></Incircle>
+            </Circle>
+          </Item>
+        </div>
+        <div>
+          <Item>
+          <Title style={{ gridColumn: "1/4" ,fontSize: '30pt', textAlign:'center'}}>코딩</Title>
+            <Circle
+              style={{
+                background: dono.to(
+                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
+                ),
+              }}
+            >
+              <Incircle></Incircle>
+            </Circle>
+            <Circle
+              style={{
+                background: dono.to(
+                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
+                ),
+              }}
+            >
+              <Incircle></Incircle>
+            </Circle>
+          </Item>
+        </div>
+        <div>
+          <Item>
+          <Title style={{ gridColumn: "1/4" ,fontSize: '30pt', textAlign:'center'}}>코딩</Title>
+            <Circle
+              style={{
+                background: dono.to(
+                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
+                ),
+              }}
+            >
+              <Incircle></Incircle>
+            </Circle>
+            <Circle
+              style={{
+                background: dono.to(
+                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
+                ),
+              }}
+            >
+              <Incircle></Incircle>
+            </Circle>
+          </Item>
+        </div>
       </List>
     </Main>
   );
