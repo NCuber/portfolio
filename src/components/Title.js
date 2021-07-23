@@ -26,6 +26,7 @@ const Title = () => {
     from: { opacity: 0, y: 50 },
     to: {opacity: 0.7, y: 0},
   });
+
   const props2 = useSpring({
     display: 'hidden',
     opacity: 0.7,
@@ -36,6 +37,7 @@ const Title = () => {
     from: { x: 500, rotateZ:720, opacity: 0, y: 50 },
     onRest: () => setReady(true)
   });
+  
   return (
     <Titlediv>
 

@@ -2,78 +2,84 @@ import styled from "styled-components";
 
 
 const Project = styled.div`
-  width: 100%;
-  height: 50vw;
+  width: 100vw;
+  height: 100vh;
   background-color: green;
-  position: relative;
-  margin: 0 auto;
+  display:flex;
+  
+  align-items: center;
 `;
-const Imageview = styled.div`
-  position: absolute;
-  left: 5%;
-  top: 5%;
-  width: 55%;
-  background-color: red;
-  float: left;
-  height: 65%;
-  display: flex;
+
+const Grid = styled.div`
+  display: grid;
+  width: 1350px;
+  height: 670px;
+  grid-template-columns: 800px 500px;
+  grid-template-rows:  550px 100px;
+  grid-gap: 20px 20px;
+  background-color: skyblue;
+  margin: 0 auto;
   justify-content: center;
-  overflow: hidden;
+  
+`;
+
+const Imageview = styled.div`
+
+  
+  display: flex;
+  align-items: center;
+  //background-color: red; 
+ 
+  
 `;
 const Info = styled.div`
-  position: absolute;
-  left: 60%;
-  top: 5%;
-  width: 35%;
+
   background-color: yellow;
-  float: left;
-  height: 65%;
-  display: flex;
-  justify-content: center;
-  text-align: center;
+  margin: 10px auto;  
+  padding: 20px;
+  border-left: solid;
 `;
 
 const Imagelist = styled.div`
-  position: absolute;
-  left: 5%;
-  top: 70%;
-  width: 90%;
-
-  background-color: blue;
-  float: left;
-  height: 20%;
-  display: flex;
+  display:flex;
   justify-content: center;
+  //background-color: blue;
+  gap: 15px;
+  
 `;
 
 const Img = styled.img`
-  width: 20%;
-
+  width: 15%;
+  height:75%;
   overflow: hidden;
+  border-radius: 10%;
+  border: 2px solid;
 `;
 
 const MainProject = ({ focusimg, imgs, onChange }) => {
   return (
     <Project>
-      <Imageview>
-        <img src={focusimg}/>
-      </Imageview>
-      <Info>
-        메인 프로젝트 메인 프로젝트를 설명하는 칸 ex) 보드 게임 프로젝트 비트{" "}
+      <Grid>
+        <Imageview>
+          <img src={focusimg} style={{width:'100%', height:'auto', border:'1px solid'}}/>
+        </Imageview>
+        <Info style={{gridRow:'1/3', gridColumn:'2'}}>
+          <h1 style={{textAlign:'center'}}>보드 게임 프로젝트<br/></h1>
+          개발 기간 : 2020-08-01 ~ 2020-08-28 (총 28일) <br/><br/>
+          개발 환경 : Spring, JavaScript, JSP, MySQL, MyBatis<br/><br/>
+          개발 인원 : 5명<br/><br/>
+          담당 <br/> 소켓 구축 및 연동, 소켓을 이용한 실시간 채팅, <br/> 게임 방 관리, 게임 대기실, <br/> DB를 이용한 게임 판매 랭킹과 내 게임 목록 페이지 구현 <br/><br/>
+          프로젝트 설명 <br/> 코로나 사태에 친구들과 비대면으로 보드게임을 같이 할 수 있도록 웹사이트 상에 게임을 구축하여 빠르고 편리하게 보드 게임을 할 수 있는 사이트 입니다.<br/>
+
+        </Info>
+        <Imagelist>
+        {imgs.map((image) => (
+            <Img src={image.img} onClick={() => onChange(image.img)}
+            />
+          ))}
+        </Imagelist>
         <br />
-        교육센터 기간중 팀프로젝트로 제작 제작 기간 0000.00.00 ~ 0000.00.00 담당{" "}
-        <br />
-        제작 : 보드 게임의 대기실(게임 방목록 및 제작, 유저 목록 및 채팅) 제작{" "}
-        <br />
-        게임 랭킹 및 목록 <br />
-      </Info>
-      <Imagelist>
-      {imgs.map((image) => (
-          <Img src={image.img} onClick={() => onChange(image.img)}
-          />
-        ))}
-      </Imagelist>
-      <br />
+      </Grid>
     </Project>
 
     /*

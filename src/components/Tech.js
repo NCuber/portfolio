@@ -1,17 +1,17 @@
 import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 import { getByDisplayValue } from "@testing-library/react";
-
+import logoJs from "../img/JavaScript.svg";
+import logoReact from "../img/React.svg";
+import logoSpring from "../img/Spring.svg";
 {
   /* --------- 스타일 선언부 --------- */
 }
 
 const Main = styled.div`
-  width: 100%;
-  height: 50vw;
+  width: 100vw;
+  height: 100vh;
   background-color: skyblue;
-
-  margin: 0 auto;
   display: flex;
   align-items: center;
 }
@@ -27,57 +27,45 @@ const Title = styled.div`
 
 const List = styled.div`
   display: grid;
-  width: 1fr;
-  height: 1fr;
+  width: 1300px;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.2fr 1fr 1fr;
-  grid-gap: 10px 10px;
+  grid-template-rows: 0.2fr 300px 300px;
+  grid-gap: 20px;
   margin: 0 auto;
+  
 `;
 
-const Circle = styled(animated.div)`
-  position: relative;
-  display: flex;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-`;
-
-const Incircle = styled.div`
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  text-align: center;
-  line-height: 150px;
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  border-radius: 50%;
-  background: skyblue;
-`;
 
 const Item = styled.div`
-  width:96%;
-  height:96%;
-  grid-template-columns: repeat(3, 0.9fr);
-  grid-template-rows: 0.2fr repeat(auto, 1fr);
-  grid-gap: 10px 10px;
-  padding: 10px;
-  
-  border-style: solid;
+  width:100%;
+  height:100%;
+  grid-template-columns: 0.2fr 0.75fr;
+  grid-template-rows: 100px repeat(100px, auto);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  border: solid;
   display: grid;
+
 `;
 
+const Progress = styled(animated.div)`
+  height:30%;
+  background-color: blue;
+  
+`;
+
+const Img = styled.img`
+  width: 100%;
+  height:100%;
+  overflow: hidden;
+`;
 const Tech = () => {
   {
     /* --------- 변수 선언부 --------- */
   }
 
-  const { dono } = useSpring({
-    dono: 100,
-    from: { dono: 0 },
-    config: { mass: 1, tension: 150, friction: 70 },
-  });
+
 
   {
     /* --------- 리턴 정의부 --------- */
@@ -89,112 +77,25 @@ const Tech = () => {
 
         <div style={{ gridRow: "2/4" }}>
           <Item>
-            <Title style={{ gridColumn: "1/4" ,fontSize: '30pt', textAlign:'center'}}>코딩</Title>
-            <Circle
-              style={{
-                background: dono.to(
-                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
-                ),
-              }}
-            >
-              <Incircle></Incircle>
-            </Circle>
-
-            <Circle
-              style={{
-                background: dono.to(
-                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
-                ),
-              }}
-            >
-              <Incircle></Incircle>
-            </Circle>
-
-            <Circle
-              style={{
-                background: dono.to(
-                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
-                ),
-              }}
-            >
-              <Incircle></Incircle>
-            </Circle>
-
-            <Circle
-              style={{
-                background: dono.to(
-                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
-                ),
-              }}
-            >
-              <Incircle></Incircle>
-            </Circle>
-
-            <Circle
-              style={{
-                background: dono.to(
-                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
-                ),
-              }}
-            >
-              <Incircle></Incircle>
-            </Circle>
-
-            <Circle
-              style={{
-                background: dono.to(
-                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
-                ),
-              }}
-            >
-              <Incircle></Incircle>
-            </Circle>
+            <Title style={{fontSize: '30pt', textAlign:'center'}}>코딩</Title>
+            <Img src={logoJs}/><Progress></Progress>
+            <Img src={logoReact}/><div></div>
+            <Img src={logoSpring}/><div></div>
+            <Img src={logoJs}/><div></div>
+            <Img src={logoJs}/><div></div>
+  
           </Item>
         </div>
         <div>
           <Item>
-          <Title style={{ gridColumn: "1/4" ,fontSize: '30pt', textAlign:'center'}}>코딩</Title>
-            <Circle
-              style={{
-                background: dono.to(
-                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
-                ),
-              }}
-            >
-              <Incircle></Incircle>
-            </Circle>
-            <Circle
-              style={{
-                background: dono.to(
-                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
-                ),
-              }}
-            >
-              <Incircle></Incircle>
-            </Circle>
+          <Title style={{ gridColumn: "1/4" ,fontSize: '30pt', textAlign:'center'}}>DataBase</Title>
+
           </Item>
         </div>
         <div>
           <Item>
-          <Title style={{ gridColumn: "1/4" ,fontSize: '30pt', textAlign:'center'}}>코딩</Title>
-            <Circle
-              style={{
-                background: dono.to(
-                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
-                ),
-              }}
-            >
-              <Incircle></Incircle>
-            </Circle>
-            <Circle
-              style={{
-                background: dono.to(
-                  (dono) => `conic-gradient(blue ${dono}% , white ${dono}%)`
-                ),
-              }}
-            >
-              <Incircle></Incircle>
-            </Circle>
+          <Title style={{ gridColumn: "1/4" ,fontSize: '30pt', textAlign:'center'}}>기타</Title>
+
           </Item>
         </div>
       </List>

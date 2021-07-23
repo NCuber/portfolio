@@ -8,15 +8,16 @@ function App() {
   return (
     
     <div>
-      
+      <ProjectContainer />
       <hr/>
       <Introduction />
       <hr/>
       <Tech />
       <hr/>
-      <ProjectContainer />
-      <hr/><Title />
+      <Title />
+      <hr/>
       <Contact />
+  
     </div>
   );
   // 바로가기 버튼 만들기 . 

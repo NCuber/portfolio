@@ -27,11 +27,12 @@ const initialState = {
       text: "방 만들기",
       img: img2,
     },
+    /*
     {
       id: 3,
       text: "게임 정보",
       img: img3,
-    },
+    },*/
     {
       id: 4,
       text: "게임 랭킹",
