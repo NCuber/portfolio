@@ -4,6 +4,9 @@ import { getByDisplayValue } from "@testing-library/react";
 import logoJs from "../img/JavaScript.svg";
 import logoReact from "../img/React.svg";
 import logoSpring from "../img/Spring.svg";
+import logoOracle from "../img/Oracle.svg";
+import logoMysql from "../img/MySQL.svg";
+
 {
   /* --------- 스타일 선언부 --------- */
 }
@@ -14,6 +17,7 @@ const Main = styled.div`
   background-color: skyblue;
   display: flex;
   align-items: center;
+  font-family: 'Noto Sans CJK KR';
 }
 `;
 
@@ -37,32 +41,43 @@ const List = styled.div`
 
 
 const Item = styled.div`
-  width:100%;
+  width:650px;
   height:100%;
-  grid-template-columns: 0.2fr 0.75fr;
-  grid-template-rows: 100px repeat(100px, auto);
-  gap: 20px;
-  justify-content: center;
+  
+  gap: 10px;
+  
   align-items: center;
   border: solid;
-  display: grid;
-
+  display:flex;
+  flex-direction:column;
 `;
 
-const Progress = styled(animated.div)`
-  height:30%;
-  background-color: blue;
+const Progress = styled.div`
+  width:600px;
+  height:20px;
+  background-color: white;
+  
+`;
+const Inprogress = styled(animated.div)`
+  width:50%;
+  height:20px;
+  background-color: yellow;
   
 `;
 
+
+
+
+
 const Img = styled.img`
-  width: 100%;
-  height:100%;
+  width: 100px;
+  height:80px;
   overflow: hidden;
 `;
 const Tech = () => {
   {
     /* --------- 변수 선언부 --------- */
+ 
   }
 
 
@@ -78,24 +93,25 @@ const Tech = () => {
         <div style={{ gridRow: "2/4" }}>
           <Item>
             <Title style={{fontSize: '30pt', textAlign:'center'}}>코딩</Title>
-            <Img src={logoJs}/><Progress></Progress>
-            <Img src={logoReact}/><div></div>
-            <Img src={logoSpring}/><div></div>
-            <Img src={logoJs}/><div></div>
-            <Img src={logoJs}/><div></div>
+            <div><Img src={logoJs}/><Progress/></div>
+            <div><Img src={logoReact}/><Progress><Inprogress></Inprogress></Progress></div>
+            <div><Img src={logoSpring}/><Progress>d</Progress></div>
+
   
           </Item>
         </div>
         <div>
           <Item>
           <Title style={{ gridColumn: "1/4" ,fontSize: '30pt', textAlign:'center'}}>DataBase</Title>
-
+            <div><Img src={logoMysql}/><Progress/></div>
+              <div><Img src={logoOracle}/><Progress><Inprogress></Inprogress></Progress></div>
           </Item>
         </div>
         <div>
           <Item>
           <Title style={{ gridColumn: "1/4" ,fontSize: '30pt', textAlign:'center'}}>기타</Title>
-
+            <div><Img src={logoJs}/><Progress/></div>
+              <div><Img src={logoReact}/><Progress><Inprogress></Inprogress></Progress></div>
           </Item>
         </div>
       </List>
