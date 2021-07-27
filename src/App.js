@@ -4,25 +4,27 @@ import ProjectContainer from "./containers/ProjectContainer"
 import Contact from "./components/Contact";
 import Title from "./components/Title";
 
+
+
+
 function App() {
   return (
     
-    <div>
+    <div style={{backgroundColor:'ivory'}}>
       
+      
+      <Title />
+      <hr/>
       <Introduction />
-      {/*}
+      <hr/>
       <Tech />
       <hr/>
       <ProjectContainer />
       <hr/>
-      <Introduction />
-      <hr/>
-      <Tech />
-      <hr/>
-      <Title />
-      <hr/>
+
+      
       <Contact />
-        */}
+      
     </div>
   );
   // 바로가기 버튼 만들기 . 

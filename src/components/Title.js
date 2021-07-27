@@ -8,7 +8,7 @@ height: 50vw;
 line-height: 50vw;
 font-size: 7vw;
 margin: 0 auto;
-background-color: aquamarine;
+//background-color: aquamarine;
 text-align: center;
 vertical-align: middle;
 `

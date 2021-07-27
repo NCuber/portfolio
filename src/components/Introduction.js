@@ -4,7 +4,7 @@ import pic from "../img/JavaScript.svg";
 const Main = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: ivory;
+  //background-color: ivory;
   padding: 10pt;
   box-sizing: border-box;
 `;
