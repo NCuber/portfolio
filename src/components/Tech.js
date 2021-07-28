@@ -14,7 +14,7 @@ import logoMysql from "../img/MySQL.svg";
 const Main = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: skyblue;
+  background-color: white;
   display: flex;
   align-items: center;
   font-family: 'Noto Sans CJK KR';
@@ -93,9 +93,9 @@ const Tech = () => {
         <div style={{ gridRow: "2/4" }}>
           <Item>
             <Title style={{fontSize: '30pt', textAlign:'center'}}>코딩</Title>
-            <div><Img src={logoJs}/><Progress/></div>
-            <div><Img src={logoReact}/><Progress><Inprogress></Inprogress></Progress></div>
-            <div><Img src={logoSpring}/><Progress>d</Progress></div>
+            <div><Img src={logoJs}/>Javascript<Progress/></div>
+            <div><Img src={logoReact}/>React<Progress><Inprogress></Inprogress></Progress></div>
+            <div><Img src={logoSpring}/>Spring Framwork<Progress>d</Progress></div>
 
   
           </Item>
@@ -103,15 +103,14 @@ const Tech = () => {
         <div>
           <Item>
           <Title style={{ gridColumn: "1/4" ,fontSize: '30pt', textAlign:'center'}}>DataBase</Title>
-            <div><Img src={logoMysql}/><Progress/></div>
+            <div><Img src={logoMysql}/>MySQL<Progress/></div>
               <div><Img src={logoOracle}/><Progress><Inprogress></Inprogress></Progress></div>
           </Item>
         </div>
         <div>
           <Item>
           <Title style={{ gridColumn: "1/4" ,fontSize: '30pt', textAlign:'center'}}>기타</Title>
-            <div><Img src={logoJs}/><Progress/></div>
-              <div><Img src={logoReact}/><Progress><Inprogress></Inprogress></Progress></div>
+
           </Item>
         </div>
       </List>
