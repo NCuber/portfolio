@@ -3,6 +3,7 @@ import styled from "styled-components";
 import React, { useState } from "react";
 
 const Titlediv = styled.div`
+<<<<<<< HEAD
 width: 100vw;
 height: 100vh;
 display:flex;
@@ -13,6 +14,16 @@ justify-content: center;
 
 
 
+=======
+width: 100%;
+height: 50vw;
+line-height: 50vw;
+font-size: 7vw;
+margin: 0 auto;
+//background-color: aquamarine;
+text-align: center;
+vertical-align: middle;
+>>>>>>> 42cfdd4051654e32cd7bc360dfd5280f70f14b92
 `
 const Main = styled.div`
 width: 100vw;

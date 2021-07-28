@@ -2,10 +2,11 @@ import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 import { getByDisplayValue } from "@testing-library/react";
 import logoJs from "../img/JavaScript.svg";
-import logoReact from "../img/React.svg";
-import logoSpring from "../img/Spring.svg";
-import logoOracle from "../img/Oracle.svg";
-import logoMysql from "../img/MySQL.svg";
+import logoReact from "../img/react.png";
+import logoSpring from "../img/spring.png";
+import logoOracle from "../img/oracle.png";
+import logoMysql from "../img/mysql.png";
+import logoGithub from "../img/github.png";
 
 {
   /* --------- 스타일 선언부 --------- */
@@ -14,7 +15,7 @@ import logoMysql from "../img/MySQL.svg";
 const Main = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: white;
+  //background-color: skyblue;
   display: flex;
   align-items: center;
   font-family: 'Noto Sans CJK KR';
@@ -36,51 +37,46 @@ const List = styled.div`
   grid-template-rows: 0.2fr 300px 300px;
   grid-gap: 20px;
   margin: 0 auto;
-  
 `;
 
+const Items = styled.div`
+  width: 650px;
+  height: 100%;
 
-const Item = styled.div`
-  width:650px;
-  height:100%;
-  
   gap: 10px;
-  
+  padding: 10pt;
   align-items: center;
   border: solid;
-  display:flex;
-  flex-direction:column;
+  box-sizing: border-box;
+`;
+
+const Item = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20pt;
 `;
 
 const Progress = styled.div`
-  width:600px;
-  height:20px;
+  width: 600px;
+  height: 20px;
   background-color: white;
-  
 `;
 const Inprogress = styled(animated.div)`
-  width:50%;
-  height:20px;
+  width: 50%;
+  height: 20px;
   background-color: yellow;
-  
 `;
 
-
-
-
-
 const Img = styled.img`
-  width: 100px;
-  height:80px;
+  width: 90px;
+  height: 90px;
+  border-radius: 30%;
   overflow: hidden;
 `;
 const Tech = () => {
   {
     /* --------- 변수 선언부 --------- */
- 
   }
-
-
 
   {
     /* --------- 리턴 정의부 --------- */
@@ -91,27 +87,68 @@ const Tech = () => {
         <Title>My Skill</Title>
 
         <div style={{ gridRow: "2/4" }}>
-          <Item>
-            <Title style={{fontSize: '30pt', textAlign:'center'}}>코딩</Title>
-            <div><Img src={logoJs}/>Javascript<Progress/></div>
-            <div><Img src={logoReact}/>React<Progress><Inprogress></Inprogress></Progress></div>
-            <div><Img src={logoSpring}/>Spring Framwork<Progress>d</Progress></div>
-
-  
-          </Item>
+          <Items>
+            <Title style={{ fontSize: "30pt", textAlign: "center" }}>
+              코딩
+            </Title>
+            <Item>
+              <Img src={logoJs} />
+              <Progress />
+            </Item>
+            <Item>
+              <Img src={logoReact} />
+              <Progress>
+                <Inprogress></Inprogress>
+              </Progress>
+            </Item>
+            <Item>
+              <Img src={logoSpring} />
+              <Progress>d</Progress>
+            </Item>
+          </Items>
         </div>
         <div>
-          <Item>
-          <Title style={{ gridColumn: "1/4" ,fontSize: '30pt', textAlign:'center'}}>DataBase</Title>
-            <div><Img src={logoMysql}/>MySQL<Progress/></div>
-              <div><Img src={logoOracle}/><Progress><Inprogress></Inprogress></Progress></div>
-          </Item>
+          <Items>
+            <Title
+              style={{
+                gridColumn: "1/4",
+                fontSize: "30pt",
+                textAlign: "center",
+              }}
+            >
+              DataBase
+            </Title>
+            <Item>
+              <Img src={logoMysql} />
+              <Progress />
+            </Item>
+            <Item>
+              <Img src={logoOracle} />
+              <Progress>
+                <Inprogress></Inprogress>
+              </Progress>
+            </Item>
+          </Items>
         </div>
         <div>
-          <Item>
-          <Title style={{ gridColumn: "1/4" ,fontSize: '30pt', textAlign:'center'}}>기타</Title>
+          <Items>
+            <Title
+              style={{
+                gridColumn: "1/4",
+                fontSize: "30pt",
+                textAlign: "center",
+              }}
+            >
+              기타
+            </Title>
 
-          </Item>
+            <Item>
+              <Img src={logoGithub} />
+              <Progress>
+                <Inprogress></Inprogress>
+              </Progress>
+            </Item>
+          </Items>
         </div>
       </List>
     </Main>
