@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
-
 const Project = styled.div`
   width: 100vw;
   height: 100vh;
   //background-color: green;
-  display:flex;
-  
+  display: flex;
+
   align-items: center;
 `;
 
@@ -14,43 +13,38 @@ const Grid = styled.div`
   display: grid;
   width: 1350px;
   height: 670px;
-  grid-template-columns: 800px 500px;
-  grid-template-rows:  550px 100px;
+  grid-template-columns: 750px 600px;
+  grid-template-rows: 550px 100px;
   grid-gap: 20px 20px;
-  background-color: skyblue;
+  //background-color: skyblue;
   margin: 0 auto;
   justify-content: center;
-  
+  font-size: 1.3rem;
+  //border: 2px solid;
 `;
 
 const Imageview = styled.div`
-
-  
   display: flex;
   align-items: center;
-  //background-color: red; 
- 
-  
+  //background-color: red;
 `;
 const Info = styled.div`
-
-  background-color: yellow;
-  margin: 10px auto;  
+  //background-color: white;
+  margin: 10px auto;
   padding: 20px;
   border-left: solid;
 `;
 
 const Imagelist = styled.div`
-  display:flex;
+  display: flex;
   justify-content: center;
   //background-color: blue;
   gap: 15px;
-  
 `;
 
 const Img = styled.img`
   width: 15%;
-  height:75%;
+  height: 75%;
   overflow: hidden;
   border-radius: 10%;
   border: 2px solid;
@@ -61,21 +55,49 @@ const MainProject = ({ focusimg, imgs, onChange }) => {
     <Project>
       <Grid>
         <Imageview>
-          <img src={focusimg} style={{width:'100%', height:'auto', border:'1px solid'}}/>
+          <img
+            src={focusimg}
+            style={{ width: "100%", height: "auto", border: "1px solid" }}
+          />
         </Imageview>
-        <Info style={{gridRow:'1/3', gridColumn:'2'}}>
-          <h1 style={{textAlign:'center'}}>보드 게임 프로젝트<br/></h1>
-          개발 기간 : 2020-08-01 ~ 2020-08-28 (총 28일) <br/><br/>
-          개발 환경 : Spring, JavaScript, JSP, MySQL, MyBatis<br/><br/>
-          개발 인원 : 5명<br/><br/>
-          담당 <br/> 소켓 구축 및 연동, 소켓을 이용한 실시간 채팅, <br/> 게임 방 관리, 게임 대기실, <br/> DB를 이용한 게임 판매 랭킹과 내 게임 목록 페이지 구현 <br/><br/>
-          프로젝트 설명 <br/> 코로나 사태에 친구들과 비대면으로 보드게임을 같이 할 수 있도록 웹사이트 상에 게임을 구축하여 빠르고 편리하게 보드 게임을 할 수 있는 사이트 입니다.<br/>
+        <Info style={{ gridRow: "1/3", gridColumn: "2" }}>
+          <p
+            style={{
+              fontSize: "3rem",
+              margin: "10px auto",
+              fontWeight: "bolder",
+            }}
+          >
+            보드 게임 프로젝트
+            <br />
+          </p>
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            <ul style={{ listStyle: "none", padding: "0", fontWeight: "bold" }}>
+              <li>개발 기간</li>
+              <li>개발 환경</li>
+              <li>개발 인원</li>
+            </ul>
+            <ul style={{ listStyle: "none" }}>
+              <li>2020-08-01 ~ 2020-08-28 (총 28일)</li>
+              <li>Spring / JavaScript / JSP / MySQL / MyBatis</li>
+              <li>5명</li>
+            </ul>
+          </div>
+          <p style={{ fontWeight: "bold", fontSize: "1.5rem", marginBottom: '0.5rem' }}>담당</p>
+          <li>소켓 생성 및 연동, 소켓을 이용한 실시간 채팅</li>
+          <li>게임 방 목록 갱신, 생성, 입장, 게임 대기실 페이지 구현</li>
+          <li>DB를 이용한 게임 판매 랭킹과 내 게임 목록 페이지 구현</li>
 
+          <p style={{ fontWeight: "bold", fontSize: "1.5rem", marginTop: '3rem',marginBottom: '0.5rem' }}>프로젝트 설명</p>
+          
+            코로나 사태에 친구들과 비대면으로 보드게임을 같이 할 수 있도록
+            웹사이트 상에 게임을 구축하여 빠르고 편리하게 보드 게임을 할 수 있는
+            사이트 입니다.
+          
         </Info>
         <Imagelist>
-        {imgs.map((image) => (
-            <Img src={image.img} onClick={() => onChange(image.img)}
-            />
+          {imgs.map((image) => (
+            <Img src={image.img} onClick={() => onChange(image.img)} />
           ))}
         </Imagelist>
         <br />

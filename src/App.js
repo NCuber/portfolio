@@ -3,6 +3,7 @@ import Introduction from "./components/Introduction";
 import ProjectContainer from "./containers/ProjectContainer"
 import Contact from "./components/Contact";
 import Title from "./components/Title";
+import Menu from "./components/Menu";
 
 
 
@@ -10,9 +11,11 @@ import Title from "./components/Title";
 function App() {
   return (
     
-    <div style={{backgroundColor:'ivory'}}>
+    <div style={{backgroundColor:'ivory', fontFamily:'Noto Sans CJK KR'}}>
       
-      
+
+      <Menu />
+      <hr/>
       <Title />
       <hr/>
       <Introduction />

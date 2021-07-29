@@ -1,9 +1,9 @@
 import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 import React, { useState } from "react";
+import bg from "../img/background.jpg";
 
 const Titlediv = styled.div`
-<<<<<<< HEAD
 width: 100vw;
 height: 100vh;
 display:flex;
@@ -11,25 +11,17 @@ font-size: 20vh;
 font-weight: bold;
 align-items: center;
 justify-content: center;
+color: white;
 
 
-
-=======
-width: 100%;
-height: 50vw;
-line-height: 50vw;
-font-size: 7vw;
-margin: 0 auto;
-//background-color: aquamarine;
-text-align: center;
-vertical-align: middle;
->>>>>>> 42cfdd4051654e32cd7bc360dfd5280f70f14b92
 `
 const Main = styled.div`
 width: 100vw;
 height: 100vh;
-background-color: aquamarine;
 
+background-attachment: fixed;
+background-image: url(${bg});
+background-size: 120vw;
 `;
 
 const Menu = styled.div`

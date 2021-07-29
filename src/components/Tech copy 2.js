@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
+import { getByDisplayValue } from "@testing-library/react";
 import logoJs from "../img/JavaScript.svg";
 import logoReact from "../img/react.png";
 import logoSpring from "../img/spring.png";
@@ -45,27 +46,25 @@ const Items = styled.div`
   gap: 10px;
   padding: 10pt;
   align-items: center;
-  border: 2px solid;
+  border: solid;
   box-sizing: border-box;
 `;
 
-const Item = styled.ul`
-  list-style: none;
+const Item = styled.div`
   display: flex;
-  padding: 5px;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row;
+  padding-bottom: 20pt;
 `;
 
 const Progress = styled.div`
-  width: 500px;
+  width: 600px;
   height: 20px;
-  background-color: yellow;
+  background-color: white;
 `;
 const Inprogress = styled(animated.div)`
   width: 50%;
   height: 20px;
-  background-color: blue;
+  background-color: yellow;
 `;
 
 const Img = styled.img`
@@ -92,43 +91,21 @@ const Tech = () => {
             <Title style={{ fontSize: "30pt", textAlign: "center" }}>
               코딩
             </Title>
-            <div
-              style={{ display: "flex", height: "80%", flexDirection: "row" }}
-            >
-              <Item>
-                <li>
-                  <Img src={logoReact} />
-                </li>
-                <li>
-                  <Img src={logoSpring} />
-                </li>
-                <li>
-                  <Img src={logoJs} />
-                </li>
-                <li />
-              </Item>
-              <Item>
-                <li>
-                  React
-                  <Progress>
-                    <Inprogress />
-                  </Progress>
-                </li>
-                <li>
-                  Spring Framework
-                  <Progress>
-                    <Inprogress />
-                  </Progress>
-                </li>
-                <li>
-                  Java Script
-                  <Progress>
-                    <Inprogress />
-                  </Progress>
-                </li>
-                <li />
-              </Item>
-            </div>
+            <Item>
+              <Img src={logoJs} />
+              <Progress />
+            </Item>
+            <Item>
+              <Img src={logoReact} />
+              <div>d</div>
+              <Progress style={{position:'relative', bottom:'30%'}}>
+                <Inprogress></Inprogress>
+              </Progress>
+            </Item>
+            <Item>
+              <Img src={logoSpring} />
+              <Progress>d</Progress>
+            </Item>
           </Items>
         </div>
         <div>
@@ -142,30 +119,16 @@ const Tech = () => {
             >
               DataBase
             </Title>
-            <div
-              style={{ display: "flex", height: "80%", flexDirection: "row" }}
-            >
-              <Item>
-                <li>
-                  <Img src={logoMysql} />
-                </li>
-                <li>
-                  <Img src={logoOracle} />
-                </li>
-              </Item>
-              <Item>
-                <li>
-                  MySQL
-                  <Progress />
-                </li>
-                <li>
-                  Oracle
-                  <Progress>
-                    <Inprogress />
-                  </Progress>
-                </li>
-              </Item>
-            </div>
+            <Item>
+              <Img src={logoMysql} />
+              <Progress />
+            </Item>
+            <Item>
+              <Img src={logoOracle} />
+              <Progress>
+                <Inprogress></Inprogress>
+              </Progress>
+            </Item>
           </Items>
         </div>
         <div>
@@ -179,23 +142,13 @@ const Tech = () => {
             >
               기타
             </Title>
-            <div
-              style={{ display: "flex", height: "80%", flexDirection: "row" }}
-            >
-              <Item>
-                <li>
-                  <Img src={logoGithub} />
-                </li>
-              </Item>
-              <Item>
-                <li>
-                  GitHub
-                  <Progress>
-                    <Inprogress />
-                  </Progress>
-                </li>
-              </Item>
-            </div>
+
+            <Item>
+              <Img src={logoGithub} />
+              <Progress>
+                <Inprogress></Inprogress>
+              </Progress>
+            </Item>
           </Items>
         </div>
       </List>
