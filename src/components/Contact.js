@@ -24,7 +24,7 @@ const Content = styled.div`
 
 const Contact = () => {
   return (
-    <Main>
+    <Main id="contact">
       <Title> Contact </Title>
       <Content>
         <ul style={{listStyle:'none', fontWeight:'bold'}}>

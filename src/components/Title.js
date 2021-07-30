@@ -21,17 +21,10 @@ height: 100vh;
 
 background-attachment: fixed;
 background-image: url(${bg});
-background-size: 120vw;
+background-size: 100vw auto;
 `;
 
-const Menu = styled.div`
-  position: absolute;
-  left: 1%;
-  top: 3%;
-  line-height:0vw;
-  font-size: 3vh;
-  font-weight:bold;
-`;
+
 
 const Bottom = styled.div`
   position: absolute;
@@ -67,16 +60,13 @@ const Title = () => {
   
   
   return (
-    <Main>
-      <Menu>Menu</Menu>
-      
+    <Main id="title" >
       <Titlediv>
         <div style={{position:'relative', left:'10vh', top:'-10vh', fontSize:'7vh'}}>Kim's</div>
         PortFolio
         <div style={{position:'relative', left:'-15vh', top:'12vh', fontSize:'7vh'}} >Website</div>
       </Titlediv>
       
-      <Bottom> Contact </Bottom>
     </Main>
     // use spring xys 에서 y - 20 에서 y로 올리기
     // 현재 브라우저 크기에 동적으로 반응 가로 : 화면크기 가로, 세로 100%

@@ -52,7 +52,7 @@ const Img = styled.img`
 
 const MainProject = ({ focusimg, imgs, onChange }) => {
   return (
-    <Project>
+    <Project id="projects" >
       <Grid>
         <Imageview>
           <img

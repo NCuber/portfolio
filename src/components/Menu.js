@@ -1,30 +1,52 @@
 import styled from "styled-components";
+import {useState} from "react";
 
-
-const Main = styled.div`
+const Main = styled.nav`
 width: 100vw;
-height: 7vh;
-display: flex;
+height: 5vh;
+position:fixed;
 flex-direction: row;
 justify-content: space-evenly;
 align-items: center;
 box-sizing: border-box;
-font-size: 2rem;
+font-size: 1.5rem;
 font-weight:bolder;
+top:0%;
+background-color: rgba(200, 200, 200, 0.7);
 
+
+`;
+const Menubtn = styled.div`
+  position:fixed;
+  right: 3%;
+  top: 0%;
+ 
+  font-size: 2rem;
+  font-weight:bold;
+  color:darkblue;
+ 
 `;
 
 
 const Menu = () =>
 {
+    const [mclick, setMclick] = useState(true);
+
+
     return (
-        <Main>
-            <span>Title</span>
-            <span>About Me</span>
-            <span>Tech</span>
-            <span>Projects</span>
-            <span>Contact</span>
+
+        <div>
+        
+        <Main style={{ display: mclick ? 'flex' : 'none'}}>
+            <span><a href="#title">Title</a></span>
+            <span><a href="#about">About Me</a></span>
+            <span><a href="#tech">Tech</a></span>
+            <span><a href="#projects">Projects</a></span>
+            <span><a href="#contact">Contact</a></span>
+            <span />
         </Main>
+        <Menubtn onClick={() => setMclick(!mclick)}>{mclick ? ' Close ' : ' Menu '}</Menubtn>
+        </div>
     );
 }
 

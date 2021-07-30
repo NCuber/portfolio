@@ -32,7 +32,7 @@ const Picture = styled.img`
 
 const Introduction = () => {
   return (
-    <Main>
+    <Main id="about">
       <Main2>
         <h1>ABOUT ME</h1>
         <Content>

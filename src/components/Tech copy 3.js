@@ -31,23 +31,22 @@ const Title = styled.div`
 
 const List = styled.div`
   display: grid;
-  width: 1250px;
+  width: 1300px;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.2fr 600px;
-
+  grid-template-rows: 0.2fr 300px 300px;
+  grid-gap: 20px;
   margin: 0 auto;
 `;
 
 const Items = styled.div`
-  width: 625px;
+  width: 650px;
   height: 100%;
-  margin-top: 20pt;
+
+  gap: 10px;
+  padding: 10pt;
   align-items: center;
-  //border: 2px solid;
+  border: 2px solid;
   box-sizing: border-box;
-  background-color: silver;
-  
-  
 `;
 
 const Item = styled.ul`
@@ -55,10 +54,7 @@ const Item = styled.ul`
   display: flex;
   padding: 5px;
   flex-direction: column;
-  justify-content: space-around;
-  font-size:1.3rem;
-  font-weight:bold;
-  margin: 0 auto;
+  justify-content: space-between;
 `;
 
 const Progress = styled.div`
@@ -87,13 +83,15 @@ const Tech = () => {
     /* --------- 리턴 정의부 --------- */
   }
   return (
-    <Main id="tech" >
+    <Main>
       <List>
         <Title>My Skill</Title>
 
-        <div>
+        <div style={{ gridRow: "2/4" }}>
           <Items>
-            
+            <Title style={{ fontSize: "30pt", textAlign: "center" }}>
+              코딩
+            </Title>
             <div
               style={{ display: "flex", height: "80%", flexDirection: "row" }}
             >
@@ -107,8 +105,7 @@ const Tech = () => {
                 <li>
                   <Img src={logoJs} />
                 </li>
-                
-                
+                <li />
               </Item>
               <Item>
                 <li>
@@ -129,14 +126,22 @@ const Tech = () => {
                     <Inprogress />
                   </Progress>
                 </li>
-                
+                <li />
               </Item>
             </div>
           </Items>
         </div>
         <div>
           <Items>
-            
+            <Title
+              style={{
+                gridColumn: "1/4",
+                fontSize: "30pt",
+                textAlign: "center",
+              }}
+            >
+              DataBase
+            </Title>
             <div
               style={{ display: "flex", height: "80%", flexDirection: "row" }}
             >
@@ -146,9 +151,6 @@ const Tech = () => {
                 </li>
                 <li>
                   <Img src={logoOracle} />
-                </li>
-                <li>
-                  <Img src={logoGithub} />
                 </li>
               </Item>
               <Item>
@@ -162,6 +164,30 @@ const Tech = () => {
                     <Inprogress />
                   </Progress>
                 </li>
+              </Item>
+            </div>
+          </Items>
+        </div>
+        <div>
+          <Items>
+            <Title
+              style={{
+                gridColumn: "1/4",
+                fontSize: "30pt",
+                textAlign: "center",
+              }}
+            >
+              기타
+            </Title>
+            <div
+              style={{ display: "flex", height: "80%", flexDirection: "row" }}
+            >
+              <Item>
+                <li>
+                  <Img src={logoGithub} />
+                </li>
+              </Item>
+              <Item>
                 <li>
                   GitHub
                   <Progress>

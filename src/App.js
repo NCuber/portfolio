@@ -4,29 +4,38 @@ import ProjectContainer from "./containers/ProjectContainer"
 import Contact from "./components/Contact";
 import Title from "./components/Title";
 import Menu from "./components/Menu";
+import styled from "styled-components";
+import {useState} from "react";
+
+const Menubtn = styled.div`
+  position:fixed;
+  left: 5%;
+  top: 2.5%;
+  line-height: 0vw;
+  font-size: 2rem;
+  font-weight:bold;
+  color:black;
+`;
+
 
 
 
 
 function App() {
+
+  
   return (
     
     <div style={{backgroundColor:'ivory', fontFamily:'Noto Sans CJK KR'}}>
-      
-
       <Menu />
-      <hr/>
-      <Title />
-      <hr/>
-      <Introduction />
-      <hr/>
-      <Tech />
-      <hr/>
-      <ProjectContainer />
-      <hr/>
-
       
-      <Contact />
+      
+      <Title/>
+      <Introduction/>
+      <Tech/>
+      <ProjectContainer/>   
+      <hr/>
+      <Contact/>
       
     </div>
   );
