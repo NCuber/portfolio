@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import bg from "../img/background.jpg";
 
 const Titlediv = styled.div`
-width: 100vw;
+min-width: 1400px;
+//width: 100vw;
 height: 100vh;
 display:flex;
 font-size: 20vh;
@@ -16,12 +17,13 @@ color: white;
 
 `
 const Main = styled.div`
-width: 100vw;
-height: 100vh;
+//width: 100vw;
+min-width: 1400px;
+min-height: 800px;
 
 background-attachment: fixed;
 background-image: url(${bg});
-background-size: 100vw auto;
+background-size: cover;
 `;
 
 

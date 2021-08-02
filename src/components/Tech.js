@@ -12,7 +12,7 @@ import logoGithub from "../img/github.png";
 }
 
 const Main = styled.div`
-  width: 100vw;
+  min-width: 1400px;
   height: 100vh;
   //background-color: skyblue;
   display: flex;
@@ -67,9 +67,9 @@ const Progress = styled.div`
   background-color: yellow;
 `;
 const Inprogress = styled(animated.div)`
-  width: 50%;
+
   height: 20px;
-  background-color: blue;
+  background-color: red;
 `;
 
 const Img = styled.img`
@@ -79,9 +79,17 @@ const Img = styled.img`
   overflow: hidden;
 `;
 const Tech = () => {
-  {
+  
     /* --------- 변수 선언부 --------- */
-  }
+
+  const {per30, per50, per80 } = useSpring({
+    per30: 30,
+    per50: 50,
+    per80: 80,
+    from: { per30:0, per50: 0, per80: 0 },
+    config: { duration: 700},
+  });
+  
 
   {
     /* --------- 리턴 정의부 --------- */
@@ -114,19 +122,19 @@ const Tech = () => {
                 <li>
                   React
                   <Progress>
-                    <Inprogress />
+                    <Inprogress style={{width: per30.to(per => `${per}%`)}}/>
                   </Progress>
                 </li>
                 <li>
                   Spring Framework
                   <Progress>
-                    <Inprogress />
+                    <Inprogress style={{width: per50.to(per => `${per}%`)}} />
                   </Progress>
                 </li>
                 <li>
                   Java Script
                   <Progress>
-                    <Inprogress />
+                    <Inprogress  style={{width: per30.to(per => `${per}%`)}}/>
                   </Progress>
                 </li>
                 
@@ -154,18 +162,20 @@ const Tech = () => {
               <Item>
                 <li>
                   MySQL
-                  <Progress />
+                  <Progress >
+                    <Inprogress   style={{width: per30.to(per => `${per}%`)}}/>
+                  </Progress>
                 </li>
                 <li>
                   Oracle
                   <Progress>
-                    <Inprogress />
+                    <Inprogress style={{width:0}}/>
                   </Progress>
                 </li>
                 <li>
                   GitHub
                   <Progress>
-                    <Inprogress />
+                    <Inprogress   style={{width: per30.to(per => `${per}%`)}}/>
                   </Progress>
                 </li>
               </Item>

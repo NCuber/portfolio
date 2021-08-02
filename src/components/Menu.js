@@ -18,13 +18,26 @@ background-color: rgba(200, 200, 200, 0.7);
 `;
 const Menubtn = styled.div`
   position:fixed;
-  right: 3%;
-  top: 0%;
- 
-  font-size: 2rem;
+  right: 2%;
+  height:5vh;
+  font-size: 1.5rem;
+  align-items: center;
   font-weight:bold;
   color:darkblue;
- 
+  display:flex;
+  &:hover{
+    font-size: 2rem;
+}
+`;
+
+const A = styled.a`
+text-decoration: none;
+&:visited{
+    color: black;
+}
+&:hover{
+    font-size: 2rem;
+}
 `;
 
 
@@ -38,14 +51,14 @@ const Menu = () =>
         <div>
         
         <Main style={{ display: mclick ? 'flex' : 'none'}}>
-            <span><a href="#title">Title</a></span>
-            <span><a href="#about">About Me</a></span>
-            <span><a href="#tech">Tech</a></span>
-            <span><a href="#projects">Projects</a></span>
-            <span><a href="#contact">Contact</a></span>
+            <span><A href="#title">Title</A></span>
+            <span><A href="#about">About Me</A></span>
+            <span><A href="#tech">Tech</A></span>
+            <span><A href="#projects">Projects</A></span>
+            <span><A href="#contact">Contact</A></span>
             <span />
         </Main>
-        <Menubtn onClick={() => setMclick(!mclick)}>{mclick ? ' Close ' : ' Menu '}</Menubtn>
+        <Menubtn onClick={() => setMclick(!mclick)}>{mclick ? 'Close' : 'Menu'}</Menubtn>
         </div>
     );
 }

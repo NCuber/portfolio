@@ -11,16 +11,17 @@ const Project = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  width: 1350px;
+  width: 1400px;
   height: 670px;
   grid-template-columns: 750px 600px;
   grid-template-rows: 550px 100px;
-  grid-gap: 20px 20px;
+  grid-gap: 10px 10px;
   //background-color: skyblue;
+  box-sizing: border-box;
   margin: 0 auto;
   justify-content: center;
   font-size: 1.3rem;
-  //border: 2px solid;
+  border: 2px solid;
 `;
 
 const Imageview = styled.div`
@@ -32,7 +33,7 @@ const Info = styled.div`
   //background-color: white;
   margin: 10px auto;
   padding: 20px;
-  border-left: solid;
+  
 `;
 
 const Imagelist = styled.div`
@@ -46,6 +47,7 @@ const Img = styled.img`
   width: 15%;
   height: 75%;
   overflow: hidden;
+  cursor:pointer;
   border-radius: 10%;
   border: 2px solid;
 `;
