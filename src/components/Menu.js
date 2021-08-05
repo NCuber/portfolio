@@ -3,7 +3,11 @@ import {useState} from "react";
 
 const Main = styled.nav`
 width: 100vw;
+min-width: 1400px;
 height: 5vh;
+//width:10vw;
+//height:100vh; ( max width 1400)
+//flex-direction: column;
 position:fixed;
 flex-direction: row;
 justify-content: space-evenly;
@@ -37,6 +41,9 @@ text-decoration: none;
 }
 &:hover{
     font-size: 2rem;
+}
+&:link{
+    color:black;
 }
 `;
 

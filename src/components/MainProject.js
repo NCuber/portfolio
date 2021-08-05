@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const Project = styled.div`
-  width: 100vw;
-  height: 100vh;
+  min-width: 1400px;
+  height: 900px;
   //background-color: green;
   display: flex;
 

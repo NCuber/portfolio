@@ -7,6 +7,14 @@ import Menu from "./components/Menu";
 import styled from "styled-components";
 import {useState} from "react";
 
+
+
+const Main = styled.div`
+  min-width: 1500px;
+  background-color:ivory;
+  font-family:'Noto Sans CJK KR';
+`;
+
 const Menubtn = styled.div`
   position:fixed;
   left: 5%;
@@ -27,7 +35,7 @@ function App() {
   
   return (
     
-    <div style={{backgroundColor:'ivory', fontFamily:'Noto Sans CJK KR'}}>
+    <Main>
       <Menu />
       
       
@@ -38,7 +46,7 @@ function App() {
       <hr/>
       <Contact/>
       
-    </div>
+    </Main>
   );
   // 바로가기 버튼 만들기 . 
   // 버튼 누를시 상단에서 메뉴바 생성.

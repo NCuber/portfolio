@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { useSpring, animated, config } from "react-spring";
 import pic from "../img/JavaScript.svg";
 
 const Main = styled.div`
   min-width: 1400px;
-  
+  height:autp;
   //background-color: ivory;
 
   box-sizing: border-box;
@@ -12,11 +13,11 @@ const Main = styled.div`
 
 const Main2 = styled.div`
   width: 1300px;
-  height: 700px;
+  height: 900px;
   margin: 0 auto;
 `;
 
-const Content = styled.div`
+const Content = styled(animated.div)`
   display: flex;
   flex-direction: row;
   font-size: 1.5rem;
@@ -30,12 +31,23 @@ const Picture = styled.img`
   
 `;
 
+
+
 const Introduction = () => {
+  const props = useSpring({
+    y : 0,
+    opacity: 1,
+    delay:500,
+    config: config.slow,
+    from: { y: 200, opacity:0},
+    
+  });
+
   return (
     <Main id="about">
       <Main2>
         <h1>ABOUT ME</h1>
-        <Content>
+        <Content style={props}>
           <Picture src={pic} />
           <ul style={{ listStyle: "none", margin: '0 auto', lineHeight:'3rem'}}>
             <li><b>이름</b> </li>
@@ -57,7 +69,7 @@ const Introduction = () => {
             </ul>
           </ul>
         </Content>
-        <div style={{minWidth:'1400px', lineHeight:'3rem'}}>
+        <animated.div style={{minWidth:'1400px', lineHeight:'3rem', ...props}}>
           <p style={{fontSize:'2.5rem', fontWeight:'bolder'}}>“당연히 사람이 해야 하는 거 아냐?”</p>
           저는 군 복무를 하면서 왜 보초 근무를 사람이 편성해야 하는 것인지 의문이 들었었습니다.<br/>
           근무를 편성하는 방식에 대해 근무를 짜는 동기에게 물었었고 예전 기록을 보며 공정하게 편성해야 하고<br/>
@@ -69,7 +81,7 @@ const Introduction = () => {
           
 
 
-        </div>
+        </animated.div>
       </Main2>
     </Main>
   );

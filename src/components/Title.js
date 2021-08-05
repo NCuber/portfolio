@@ -1,9 +1,9 @@
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated, config } from "react-spring";
 import styled from "styled-components";
 import React, { useState } from "react";
 import bg from "../img/background.jpg";
 
-const Titlediv = styled.div`
+const Titlediv = styled(animated.div)`
 min-width: 1400px;
 //width: 100vw;
 height: 100vh;
@@ -42,28 +42,20 @@ const Title = () => {
   const [ready, setReady] = useState(false);
   const props = useSpring({
 
+    x : 0,
+    opacity: 1,
     delay:500,
-    config: { mass: 2, tension: 150, friction: 20 },
-    from: { opacity: 0, y: 50 },
-    to: {opacity: 0.7, y: 0},
+    config: config.stiff,
+    from: { x: -200, opacity:0},
+    
   });
 
-  const props2 = useSpring({
-    display: 'hidden',
-    opacity: 0.7,
-    x: 0,
-    y: 0,
-    rotateZ: 0,
-    config: { mass: 2, tension: 150, friction: 20 },
-    from: { x: 500, rotateZ:720, opacity: 0, y: 50 },
-    onRest: () => setReady(true)
-  });
 
   
   
   return (
     <Main id="title" >
-      <Titlediv>
+      <Titlediv style={props}>
         <div style={{position:'relative', left:'10vh', top:'-10vh', fontSize:'7vh'}}>Kim's</div>
         PortFolio
         <div style={{position:'relative', left:'-15vh', top:'12vh', fontSize:'7vh'}} >Website</div>

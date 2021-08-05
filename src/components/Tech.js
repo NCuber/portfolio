@@ -13,7 +13,7 @@ import logoGithub from "../img/github.png";
 
 const Main = styled.div`
   min-width: 1400px;
-  height: 100vh;
+  height: 900px;
   //background-color: skyblue;
   display: flex;
   align-items: center;
@@ -106,29 +106,30 @@ const Tech = () => {
               style={{ display: "flex", height: "80%", flexDirection: "row" }}
             >
               <Item>
-                <li>
-                  <Img src={logoReact} />
-                </li>
-                <li>
+              <li>
                   <Img src={logoSpring} />
                 </li>
                 <li>
+                  <Img src={logoReact} />
+                </li>
+
+                <li>
                   <Img src={logoJs} />
                 </li>
-                
+
                 
               </Item>
               <Item>
+              <li>
+                  Spring Framework
+                  <Progress>
+                    <Inprogress style={{width: per50.to(per => `${per}%`)}} />
+                  </Progress>
+                </li>
                 <li>
                   React
                   <Progress>
                     <Inprogress style={{width: per30.to(per => `${per}%`)}}/>
-                  </Progress>
-                </li>
-                <li>
-                  Spring Framework
-                  <Progress>
-                    <Inprogress style={{width: per50.to(per => `${per}%`)}} />
                   </Progress>
                 </li>
                 <li>
@@ -137,7 +138,7 @@ const Tech = () => {
                     <Inprogress  style={{width: per30.to(per => `${per}%`)}}/>
                   </Progress>
                 </li>
-                
+
               </Item>
             </div>
           </Items>
