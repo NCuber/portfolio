@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated, config } from "react-spring";
 import logoJs from "../img/JavaScript.svg";
 import logoReact from "../img/react.png";
 import logoSpring from "../img/spring.png";
@@ -11,7 +11,7 @@ import logoGithub from "../img/github.png";
   /* --------- 스타일 선언부 --------- */
 }
 
-const Main = styled.div`
+const Main = styled(animated.div)`
   min-width: 1400px;
   height: 900px;
   //background-color: skyblue;
@@ -78,24 +78,33 @@ const Img = styled.img`
   border-radius: 30%;
   overflow: hidden;
 `;
-const Tech = () => {
+const Tech = (prop) => {
   
     /* --------- 변수 선언부 --------- */
+  const first = prop.focus > 1.0;
+  const second = prop.focus > 1.3;
+
+  const props = useSpring({
+    x : first ? 0 : 200,
+    opacity: first ? 1 : 0,
+    config: config.slow,
+  });
 
   const {per30, per50, per80 } = useSpring({
-    per30: 30,
-    per50: 50,
-    per80: 80,
+    per30: second ? 30 : 0,
+    per50: second ? 50 : 0,
+    per80: second ? 80 : 0,
     from: { per30:0, per50: 0, per80: 0 },
     config: { duration: 700},
   });
-  
+
+
 
   {
     /* --------- 리턴 정의부 --------- */
   }
   return (
-    <Main id="tech" >
+    <Main id="tech" style={props} >
       <List>
         <Title>My Skill</Title>
 

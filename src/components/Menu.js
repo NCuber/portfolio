@@ -48,7 +48,7 @@ text-decoration: none;
 `;
 
 
-const Menu = () =>
+const Menu = (prop) =>
 {
     const [mclick, setMclick] = useState(true);
 
@@ -63,7 +63,8 @@ const Menu = () =>
             <span><A href="#tech">Tech</A></span>
             <span><A href="#projects">Projects</A></span>
             <span><A href="#contact">Contact</A></span>
-            <span />
+            <span>{prop.focus}</span>
+            <span>{prop.total} </span>
         </Main>
         <Menubtn onClick={() => setMclick(!mclick)}>{mclick ? 'Close' : 'Menu'}</Menubtn>
         </div>

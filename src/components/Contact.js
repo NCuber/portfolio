@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import { useSpring, animated, config } from "react-spring";
 
-
-const Main = styled.div`
+const Main = styled(animated.div)`
 
 min-width: 1400px;
 height: 400px;
@@ -11,6 +11,7 @@ justify-content: center;
 align-items: center;
 box-sizing: border-box;
 font-size: 1.3rem;
+
 `;
 
 const Title = styled.div`
@@ -23,9 +24,18 @@ const Content = styled.div`
   line-height: 3rem;
 `;
 
-const Contact = () => {
+const Contact = (prop) => {
+
+  const first = prop.focus > 3.0;
+
+  const props = useSpring({
+    y : first ? 0 : -100,
+    opacity: first ? 1 : 0,
+    config: config.slow,
+  });
+
   return (
-    <Main id="contact">
+    <Main id="contact" style={props} >
       <Title> Contact </Title>
       <Content>
         <ul style={{listStyle:'none', fontWeight:'bold'}}>

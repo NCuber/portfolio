@@ -4,7 +4,7 @@ import pic from "../img/JavaScript.svg";
 
 const Main = styled.div`
   min-width: 1400px;
-  height:autp;
+  height:auto;
   //background-color: ivory;
 
   box-sizing: border-box;
@@ -33,14 +33,22 @@ const Picture = styled.img`
 
 
 
-const Introduction = () => {
+const Introduction = (prop) => {
+
+  const first = prop.focus > 0;
+  const second = prop.focus > 0.4;
+
   const props = useSpring({
-    y : 0,
-    opacity: 1,
-    delay:500,
+    x : first ? 0 : 200,
+    opacity: first ? 1 : 0,
     config: config.slow,
-    from: { y: 200, opacity:0},
-    
+  });
+
+  const props2 = useSpring({
+    x : second ? 0 : -200,
+    opacity: second ? 1 : 0,
+
+    config: config.slow,
   });
 
   return (
@@ -69,7 +77,7 @@ const Introduction = () => {
             </ul>
           </ul>
         </Content>
-        <animated.div style={{minWidth:'1400px', lineHeight:'3rem', ...props}}>
+        <animated.div style={{minWidth:'1400px', lineHeight:'3rem', ...props2}}>
           <p style={{fontSize:'2.5rem', fontWeight:'bolder'}}>“당연히 사람이 해야 하는 거 아냐?”</p>
           저는 군 복무를 하면서 왜 보초 근무를 사람이 편성해야 하는 것인지 의문이 들었었습니다.<br/>
           근무를 편성하는 방식에 대해 근무를 짜는 동기에게 물었었고 예전 기록을 보며 공정하게 편성해야 하고<br/>

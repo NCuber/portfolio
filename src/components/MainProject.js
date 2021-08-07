@@ -1,6 +1,9 @@
 import styled from "styled-components";
+import { useSpring, animated, config } from "react-spring";
 
-const Project = styled.div`
+
+
+const Project = styled(animated.div)`
   min-width: 1400px;
   height: 900px;
   //background-color: green;
@@ -52,9 +55,17 @@ const Img = styled.img`
   border: 2px solid;
 `;
 
-const MainProject = ({ focusimg, imgs, onChange }) => {
+const MainProject = ({ focusimg, imgs, onChange, focus }) => {
+  const first = focus > 2.0;
+
+  const props = useSpring({
+    x : first ? 0 : -200,
+    opacity: first ? 1 : 0,
+    config: config.slow,
+  });
+
   return (
-    <Project id="projects" >
+    <Project style={props}>
       <Grid>
         <Imageview>
           <img

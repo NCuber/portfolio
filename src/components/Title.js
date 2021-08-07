@@ -6,7 +6,7 @@ import bg from "../img/background.jpg";
 const Titlediv = styled(animated.div)`
 min-width: 1400px;
 //width: 100vw;
-height: 100vh;
+height: 900px;
 display:flex;
 font-size: 20vh;
 font-weight: bold;
