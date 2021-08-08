@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {useState} from "react";
 
 const Main = styled.nav`
-width: 100vw;
+width: 100%;
 min-width: 1400px;
 height: 5vh;
 //width:10vw;
@@ -22,15 +22,18 @@ background-color: rgba(200, 200, 200, 0.7);
 `;
 const Menubtn = styled.div`
   position:fixed;
-  right: 2%;
+  left: 30px;
   height:5vh;
   font-size: 1.5rem;
   align-items: center;
   font-weight:bold;
   color:darkblue;
   display:flex;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+
   &:hover{
     font-size: 2rem;
+
 }
 `;
 
@@ -58,15 +61,16 @@ const Menu = (prop) =>
         <div>
         
         <Main style={{ display: mclick ? 'flex' : 'none'}}>
+            <span/>
             <span><A href="#title">Title</A></span>
             <span><A href="#about">About Me</A></span>
             <span><A href="#tech">Tech</A></span>
             <span><A href="#projects">Projects</A></span>
             <span><A href="#contact">Contact</A></span>
-            <span>{prop.focus}</span>
-            <span>{prop.total} </span>
+            
+            
         </Main>
-        <Menubtn onClick={() => setMclick(!mclick)}>{mclick ? 'Close' : 'Menu'}</Menubtn>
+        <Menubtn onClick={() => setMclick(!mclick)}>{mclick ? 'CLOSE' : 'MENU'}</Menubtn>
         </div>
     );
 }

@@ -26,7 +26,7 @@ const Content = styled.div`
 
 const Contact = (prop) => {
 
-  const first = prop.focus > 3.0;
+  const first = prop.focus > 0.93;
 
   const props = useSpring({
     y : first ? 0 : -100,

@@ -14,10 +14,10 @@ const Project = styled(animated.div)`
 
 const Grid = styled.div`
   display: grid;
-  width: 1400px;
-  height: 670px;
-  grid-template-columns: 750px 600px;
-  grid-template-rows: 550px 100px;
+  width: 90%;
+  height: 80%;
+  grid-template-columns: 0.6fr 0.4fr;
+  grid-template-rows: 0.8fr 0.2fr;
   grid-gap: 10px 10px;
   //background-color: skyblue;
   box-sizing: border-box;
@@ -28,8 +28,10 @@ const Grid = styled.div`
 `;
 
 const Imageview = styled.div`
+
   display: flex;
   align-items: center;
+  justify-content: center;
   //background-color: red;
 `;
 const Info = styled.div`
@@ -41,6 +43,7 @@ const Info = styled.div`
 
 const Imagelist = styled.div`
   display: flex;
+  align-items: center;
   justify-content: center;
   //background-color: blue;
   gap: 15px;
@@ -48,7 +51,7 @@ const Imagelist = styled.div`
 
 const Img = styled.img`
   width: 15%;
-  height: 75%;
+  height: 60%;
   overflow: hidden;
   cursor:pointer;
   border-radius: 10%;
@@ -56,7 +59,7 @@ const Img = styled.img`
 `;
 
 const MainProject = ({ focusimg, imgs, onChange, focus }) => {
-  const first = focus > 2.0;
+  const first = focus > 0.7;
 
   const props = useSpring({
     x : first ? 0 : -200,
@@ -65,12 +68,12 @@ const MainProject = ({ focusimg, imgs, onChange, focus }) => {
   });
 
   return (
-    <Project style={props}>
+    <Project style={props} id="projects">
       <Grid>
         <Imageview>
           <img
             src={focusimg}
-            style={{ width: "100%", height: "auto", border: "1px solid" }}
+            style={{ width: "90%", border: "1px solid" }}
           />
         </Imageview>
         <Info style={{ gridRow: "1/3", gridColumn: "2" }}>
@@ -113,7 +116,7 @@ const MainProject = ({ focusimg, imgs, onChange, focus }) => {
             <Img src={image.img} onClick={() => onChange(image.img)} />
           ))}
         </Imagelist>
-        <br />
+        
       </Grid>
     </Project>
 

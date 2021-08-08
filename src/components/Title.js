@@ -18,8 +18,8 @@ color: white;
 `
 const Main = styled.div`
 //width: 100vw;
-min-width: 1400px;
-min-height: 800px;
+min-width: 100%;
+min-height: 100%;
 
 background-attachment: fixed;
 background-image: url(${bg});

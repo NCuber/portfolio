@@ -32,22 +32,27 @@ class App extends React.Component
 {
   state = {
     scrollTop: 0,
+    
     total: 0
   };
 
   componentDidMount() {
     // 스크롤 이벤트 적용
     window.addEventListener('scroll', this.onScroll);
-    const total = document.documentElement.scrollHeight;
-    this.setState({total});
+    
   }
 
 
   onScroll = (e) => {
     // 스크롤 할때마다 state에 scroll한 만큼 scrollTop 값 증가하므로 이를 업데이트해줌, 
     //따라서 스크롤 시점에 따라 특정액션을 추후에 state를 활용하여 구현 가능
-    const scrollTop = (((('scroll', e.srcElement.scrollingElement.scrollTop) / this.state.total) - 0.07 )/ 0.22).toFixed(1);
     
+    const scrollTop = (('scroll', e.srcElement.scrollingElement.scrollTop) / this.state.total).toFixed(2) ;
+    //const scrollTop = (((('scroll', e.srcElement.scrollingElement.scrollTop) / this.state.total) - 0.1 )/ 0.3).toFixed(1);
+    
+    const { innerHeight } = window;
+    const total = document.documentElement.scrollHeight - innerHeight;
+    this.setState({total});
     this.setState({ scrollTop });
   };
 

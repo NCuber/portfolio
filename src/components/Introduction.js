@@ -4,7 +4,7 @@ import pic from "../img/JavaScript.svg";
 
 const Main = styled.div`
   min-width: 1400px;
-  height:auto;
+  height:900px;
   //background-color: ivory;
 
   box-sizing: border-box;
@@ -12,8 +12,8 @@ const Main = styled.div`
 `;
 
 const Main2 = styled.div`
-  width: 1300px;
-  height: 900px;
+  width: 90%;
+  height: 100%;
   margin: 0 auto;
 `;
 
@@ -35,8 +35,8 @@ const Picture = styled.img`
 
 const Introduction = (prop) => {
 
-  const first = prop.focus > 0;
-  const second = prop.focus > 0.4;
+  const first = prop.focus > 0.1;
+  const second = prop.focus > 0.2;
 
   const props = useSpring({
     x : first ? 0 : 200,

@@ -31,7 +31,7 @@ const Title = styled.div`
 
 const List = styled.div`
   display: grid;
-  width: 1250px;
+  width: 80%;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.2fr 600px;
 
@@ -39,9 +39,9 @@ const List = styled.div`
 `;
 
 const Items = styled.div`
-  width: 625px;
+  width: 100%;
   height: 100%;
-  margin-top: 20pt;
+  margin-top: 5%;
   align-items: center;
   //border: 2px solid;
   box-sizing: border-box;
@@ -62,27 +62,26 @@ const Item = styled.ul`
 `;
 
 const Progress = styled.div`
-  width: 500px;
+  width: 100%;
   height: 20px;
   background-color: yellow;
 `;
 const Inprogress = styled(animated.div)`
-
   height: 20px;
   background-color: red;
 `;
 
 const Img = styled.img`
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
   border-radius: 30%;
   overflow: hidden;
 `;
 const Tech = (prop) => {
   
     /* --------- 변수 선언부 --------- */
-  const first = prop.focus > 1.0;
-  const second = prop.focus > 1.3;
+  const first = prop.focus > 0.4;
+  const second = prop.focus > 0.5;
 
   const props = useSpring({
     x : first ? 0 : 200,
@@ -114,7 +113,7 @@ const Tech = (prop) => {
             <div
               style={{ display: "flex", height: "80%", flexDirection: "row" }}
             >
-              <Item>
+              <Item style={{width:'15%', marginLeft:'20px', marginRight:'10px'}}>
               <li>
                   <Img src={logoSpring} />
                 </li>
@@ -128,7 +127,7 @@ const Tech = (prop) => {
 
                 
               </Item>
-              <Item>
+              <Item style={{width:'70%', margin:'0'}}>
               <li>
                   Spring Framework
                   <Progress>
@@ -158,7 +157,7 @@ const Tech = (prop) => {
             <div
               style={{ display: "flex", height: "80%", flexDirection: "row" }}
             >
-              <Item>
+              <Item style={{width:'15%', marginLeft:'20px', marginRight:'10px'}}>
                 <li>
                   <Img src={logoMysql} />
                 </li>
@@ -169,7 +168,7 @@ const Tech = (prop) => {
                   <Img src={logoGithub} />
                 </li>
               </Item>
-              <Item>
+              <Item style={{width:'70%', margin:'0'}}>
                 <li>
                   MySQL
                   <Progress >
