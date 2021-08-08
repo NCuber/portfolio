@@ -11,29 +11,34 @@ import logoGithub from "../img/github.png";
   /* --------- 스타일 선언부 --------- */
 }
 
-const Main = styled(animated.div)`
+const Main = styled.div`
   min-width: 1400px;
   height: 900px;
   //background-color: skyblue;
   display: flex;
-  align-items: center;
+  flex-direction:column;
   font-family: 'Noto Sans CJK KR';
+
 }
 `;
 
 const Title = styled.div`
+ 
   font-size: 40pt;
-  text-decoration: underline;
+  text-align: right;
   font-weight: bold;
-  letter-spacing: 3px;
+  margin: 0 auto;
+  width:90%;
   grid-column: 1/3;
+  
 `;
 
-const List = styled.div`
+const List = styled(animated.div)`
   display: grid;
-  width: 80%;
+  width: 90%;
+
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.2fr 600px;
+  grid-template-rows: 700px;
 
   margin: 0 auto;
 `;
@@ -41,7 +46,7 @@ const List = styled.div`
 const Items = styled.div`
   width: 100%;
   height: 100%;
-  margin-top: 5%;
+  margin-top:3%;
   align-items: center;
   //border: 2px solid;
   box-sizing: border-box;
@@ -59,6 +64,7 @@ const Item = styled.ul`
   font-size:1.3rem;
   font-weight:bold;
   margin: 0 auto;
+  box-sizing: border-box;
 `;
 
 const Progress = styled.div`
@@ -103,15 +109,16 @@ const Tech = (prop) => {
     /* --------- 리턴 정의부 --------- */
   }
   return (
-    <Main id="tech" style={props} >
-      <List>
-        <Title>My Skill</Title>
+    <Main id="tech">
+      <Title>MY SKILL</Title>
+      <List style={props} >
+        
 
-        <div>
+        <div >
           <Items>
             
             <div
-              style={{ display: "flex", height: "80%", flexDirection: "row" }}
+              style={{ display: "flex", height: "70%", flexDirection: "row" }}
             >
               <Item style={{width:'15%', marginLeft:'20px', marginRight:'10px'}}>
               <li>
@@ -155,7 +162,7 @@ const Tech = (prop) => {
           <Items>
             
             <div
-              style={{ display: "flex", height: "80%", flexDirection: "row" }}
+              style={{ display: "flex", height: "70%", flexDirection: "row" }}
             >
               <Item style={{width:'15%', marginLeft:'20px', marginRight:'10px'}}>
                 <li>

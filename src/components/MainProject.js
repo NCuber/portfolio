@@ -3,21 +3,21 @@ import { useSpring, animated, config } from "react-spring";
 
 
 
-const Project = styled(animated.div)`
+const Project = styled.div`
   min-width: 1400px;
   height: 900px;
   //background-color: green;
   display: flex;
-
+  flex-direction: column;
   align-items: center;
 `;
 
-const Grid = styled.div`
+const Grid = styled(animated.div)`
   display: grid;
   width: 90%;
   height: 80%;
   grid-template-columns: 0.6fr 0.4fr;
-  grid-template-rows: 0.8fr 0.2fr;
+  grid-template-rows: 0.82fr 0.18fr;
   grid-gap: 10px 10px;
   //background-color: skyblue;
   box-sizing: border-box;
@@ -51,7 +51,7 @@ const Imagelist = styled.div`
 
 const Img = styled.img`
   width: 15%;
-  height: 60%;
+  height: 65%;
   overflow: hidden;
   cursor:pointer;
   border-radius: 10%;
@@ -68,8 +68,9 @@ const MainProject = ({ focusimg, imgs, onChange, focus }) => {
   });
 
   return (
-    <Project style={props} id="projects">
-      <Grid>
+    <Project id="projects">
+      <p style={{fontSize:'40pt', fontWeight:'bold', width:'90%', margin:'5pt auto'}}>PROJECT</p> 
+      <Grid style={props} >
         <Imageview>
           <img
             src={focusimg}
