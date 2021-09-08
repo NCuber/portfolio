@@ -1,6 +1,6 @@
-# First Project
+# PortFoilo Project
 
-프로젝트 명 : 포트폴리오 웹페이지 
+프로젝트 명 : 포트폴리오 웹페이지 ( https://ncuber.github.io/portfolio/ ) 
 
 개발 인원 : 1명
 
