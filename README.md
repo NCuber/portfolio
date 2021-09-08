@@ -7,10 +7,11 @@
 개발 기간 : 2021.07.01 ~ 
 
 사용 라이브러리
-React.js
-React-spring
-React-redux
-styled-components
+- React.js
+- React-spring
+- React-redux
+- styled-components
+
 
 디렉토리 
 - src
