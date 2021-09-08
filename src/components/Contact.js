@@ -46,7 +46,7 @@ const Contact = (prop) => {
         <ul style={{listStyle:'none'}}>
           <li>ac020211@naver.com</li>
           <li>https://github.com/NCuber</li>
-          <li>https://www.jobkorea.co.kr/User/Resume/View?rNo=20385311</li>
+          <li>?</li>
         </ul>
       </Content>
 

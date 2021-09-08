@@ -44,12 +44,9 @@ class App extends React.Component
 
 
   onScroll = (e) => {
-    // 스크롤 할때마다 state에 scroll한 만큼 scrollTop 값 증가하므로 이를 업데이트해줌, 
-    //따라서 스크롤 시점에 따라 특정액션을 추후에 state를 활용하여 구현 가능
+
     
     const scrollTop = (('scroll', e.srcElement.scrollingElement.scrollTop) / this.state.total).toFixed(2) ;
-    //const scrollTop = (((('scroll', e.srcElement.scrollingElement.scrollTop) / this.state.total) - 0.1 )/ 0.3).toFixed(1);
-    
     const { innerHeight } = window;
     const total = document.documentElement.scrollHeight - innerHeight;
     this.setState({total});
@@ -72,10 +69,7 @@ class App extends React.Component
     </Main>
   );
 };
-  // 바로가기 버튼 만들기 . 
-  // 버튼 누를시 상단에서 메뉴바 생성.
-  // 각 단 마다 바로가기 버튼을 만들어서 이동.
-  // 위로가기 버튼 생성.
+
 }
 
 export default App;
