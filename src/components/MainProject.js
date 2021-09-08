@@ -1,12 +1,9 @@
 import styled from "styled-components";
 import { useSpring, animated, config } from "react-spring";
 
-
-
 const Project = styled.div`
   min-width: 1400px;
   height: 900px;
-  //background-color: green;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,11 +12,10 @@ const Project = styled.div`
 const Grid = styled(animated.div)`
   display: grid;
   width: 90%;
-  height: 80%;
+  height: 85%;
   grid-template-columns: 0.6fr 0.4fr;
-  grid-template-rows: 0.82fr 0.18fr;
+  grid-template-rows: 0.85fr 0.15fr;
   grid-gap: 10px 10px;
-  //background-color: skyblue;
   box-sizing: border-box;
   margin: 0 auto;
   justify-content: center;
@@ -32,10 +28,9 @@ const Imageview = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  //background-color: red;
 `;
+
 const Info = styled.div`
-  //background-color: white;
   margin: 10px auto;
   padding: 20px;
   
@@ -45,13 +40,12 @@ const Imagelist = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  //background-color: blue;
   gap: 15px;
 `;
 
 const Img = styled.img`
-  width: 15%;
-  height: 65%;
+  width: 13%;
+  height: 75%;
   overflow: hidden;
   cursor:pointer;
   border-radius: 10%;

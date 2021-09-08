@@ -5,8 +5,8 @@ import Contact from "./components/Contact";
 import Title from "./components/Title";
 import Menu from "./components/Menu";
 import styled from "styled-components";
-import React, {useState} from "react";
-import ReactDOM from 'react-dom'
+import React from "react";
+
 
 
 

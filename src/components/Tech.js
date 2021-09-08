@@ -14,11 +14,9 @@ import logoGithub from "../img/github.png";
 const Main = styled.div`
   min-width: 1400px;
   height: 900px;
-  //background-color: skyblue;
   display: flex;
   flex-direction:column;
   font-family: 'Noto Sans CJK KR';
-
 }
 `;
 
@@ -38,7 +36,7 @@ const List = styled(animated.div)`
   width: 90%;
 
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 700px;
+  grid-template-rows: 750px;
 
   margin: 0 auto;
 `;
@@ -48,7 +46,6 @@ const Items = styled.div`
   height: 100%;
   margin-top:3%;
   align-items: center;
-  //border: 2px solid;
   box-sizing: border-box;
   background-color: silver;
   

@@ -5,8 +5,6 @@ import pic from "../img/JavaScript.svg";
 const Main = styled.div`
   min-width: 1400px;
   height:900px;
-  //background-color: ivory;
-
   box-sizing: border-box;
   font-size: 1.3rem;
 `;

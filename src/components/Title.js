@@ -5,7 +5,6 @@ import bg from "../img/background.jpg";
 
 const Titlediv = styled(animated.div)`
 min-width: 1400px;
-//width: 100vw;
 height: 900px;
 display:flex;
 font-size: 20vh;
@@ -17,10 +16,8 @@ color: white;
 
 `
 const Main = styled.div`
-//width: 100vw;
 min-width: 100%;
 min-height: 100%;
-
 background-attachment: fixed;
 background-image: url(${bg});
 background-size: cover;
@@ -62,11 +59,6 @@ const Title = () => {
       </Titlediv>
       
     </Main>
-    // use spring xys 에서 y - 20 에서 y로 올리기
-    // 현재 브라우저 크기에 동적으로 반응 가로 : 화면크기 가로, 세로 100%
-    // 가로 세로 가운데 정렬 하기
-    // 백그라운드 제외 글씨만 이동하도록
-    // 폰트 설정
   );
 };
 
