@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useSpring, animated, config } from "react-spring";
-import pic from "../img/JavaScript.svg";
+import pic from "../img/pic.jpg";
 
 const Main = styled.div`
   min-width: 1400px;
