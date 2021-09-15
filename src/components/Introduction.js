@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useSpring, animated, config } from "react-spring";
-import pic from "../img/pic.jpg";
+import picture from "../img/pic.jpg";
 
 const Main = styled.div`
   min-width: 1400px;
@@ -56,7 +56,7 @@ const Introduction = (prop) => {
       <Main2>
         <h1>ABOUT ME</h1>
         <Content style={props}>
-          <Picture src={pic} />
+          <Picture src={picture} />
           <ul style={{ listStyle: "none", margin: '0 auto', lineHeight:'3rem'}}>
             <li><b>이름</b> </li>
             <li><b>생년월일</b></li>
