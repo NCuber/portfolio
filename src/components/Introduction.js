@@ -74,6 +74,7 @@ const Introduction = (prop) => {
             <ul>
               <li>2019. 07 : 워드프로세서</li>
               <li>2019. 02 : 컴퓨터 활용능력 1급</li>
+              <li>2021. 08 : 정보처리기사</li>
             </ul>
           </ul>
         </Content>
