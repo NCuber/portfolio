@@ -13,10 +13,13 @@ import logoGithub from "../img/github.png";
 
 const Main = styled.div`
   min-width: 1400px;
+  max-width: 1600px;
   height: 900px;
   display: flex;
   flex-direction:column;
+  
   font-family: 'Noto Sans CJK KR';
+  margin: 0 auto;
 }
 `;
 

@@ -4,9 +4,11 @@ import pic from "../img/pic.jpg";
 
 const Main = styled.div`
   min-width: 1400px;
+  max-width: 1600px;
   height:900px;
   box-sizing: border-box;
   font-size: 1.3rem;
+  margin: 0 auto;
 `;
 
 const Main2 = styled.div`
@@ -24,8 +26,8 @@ const Content = styled(animated.div)`
 `;
 
 const Picture = styled.img`
-  width: 20%;
-  height: 100%;
+  max-width: 25%;
+  height: auto;
   
 `;
 

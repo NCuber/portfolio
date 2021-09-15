@@ -3,17 +3,19 @@ import { useSpring, animated, config } from "react-spring";
 
 const Project = styled.div`
   min-width: 1400px;
+  max-width: 1600px;
   height: 900px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
 `;
 
 const Grid = styled(animated.div)`
   display: grid;
   width: 90%;
   height: 85%;
-  grid-template-columns: 0.6fr 0.4fr;
+  grid-template-columns: 0.55fr 0.45fr;
   grid-template-rows: 0.85fr 0.15fr;
   grid-gap: 10px 10px;
   box-sizing: border-box;
@@ -32,7 +34,7 @@ const Imageview = styled.div`
 
 const Info = styled.div`
   margin: 10px auto;
-  padding: 20px;
+  padding: 10px;
   
 `;
 

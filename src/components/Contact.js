@@ -4,6 +4,7 @@ import { useSpring, animated, config } from "react-spring";
 const Main = styled(animated.div)`
 
 min-width: 1400px;
+max-width: 1600px;
 height: 400px;
 display: flex;
 flex-direction: column;
@@ -11,6 +12,7 @@ justify-content: center;
 align-items: center;
 box-sizing: border-box;
 font-size: 1.3rem;
+margin: 0 auto;
 
 `;
 
@@ -41,12 +43,12 @@ const Contact = (prop) => {
         <ul style={{listStyle:'none', fontWeight:'bold'}}>
           <li>EMAIL</li>
           <li>GITHUB</li>
-          <li>이력서</li>
+
         </ul>
         <ul style={{listStyle:'none'}}>
           <li>ac020211@naver.com</li>
           <li>https://github.com/NCuber</li>
-          <li>?</li>
+
         </ul>
       </Content>
 

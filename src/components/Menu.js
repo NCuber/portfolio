@@ -4,6 +4,7 @@ import {useState} from "react";
 const Main = styled.nav`
 width: 100%;
 min-width: 1400px;
+
 height: 5vh;
 //width:10vw;
 //height:100vh; ( max width 1400)
